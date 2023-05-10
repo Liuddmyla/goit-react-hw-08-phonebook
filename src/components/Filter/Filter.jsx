@@ -1,10 +1,12 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/filter/slice';
 import css from './Filter.module.css';
+import { selectFilter } from 'redux/filter/selectors';
 
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
 
   const changeFilter = e => {
     const value = e.target.value.toLowerCase();
@@ -17,6 +19,7 @@ const Filter = () => {
       <input      
       type="text"
       name="filter"
+      value={filter}
       onChange={changeFilter}
       className={css['input-filter']}
       />
