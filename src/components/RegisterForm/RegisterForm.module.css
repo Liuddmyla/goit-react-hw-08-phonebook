@@ -6,4 +6,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
+    color: rgba(17, 110, 240, 0.7);
+    font-weight: 600;    
 }

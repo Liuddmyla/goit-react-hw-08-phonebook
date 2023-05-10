@@ -5,6 +5,8 @@ import { addContact } from '../../redux/contacts/operations';
 import css from './ContactForm.module.css'
 import { selectContacts } from '../../redux/contacts/selectors';
 import toast from 'react-hot-toast';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 
 const ContactForm = () => {
@@ -46,7 +48,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className={css.form}>
         <div className={css['item-form']}>
           <label htmlFor="name" className={css['label-form']}>Name</label>
-          <input
+          <TextField
           type="text"
           name="name"          
           value={name}          
@@ -55,12 +57,13 @@ const ContactForm = () => {
           required
           onChange={handleChange}
           className={css['input-form']}
+          variant="outlined" size='small'  color="primary" 
           />
         </div>
        
         <div className={css['item-form']}>
           <label htmlFor="number" className={css['label-form']}>Number</label>
-          <input
+          <TextField
           type="tel"
           name="number"
           value={number}         
@@ -69,10 +72,11 @@ const ContactForm = () => {
           required
           onChange={handleChange}
           className={css['input-form']}
+          variant="outlined" size='small'  color="primary" 
           />   
         </div>        
         
-        <button type="submit" className={css['btn-form']}>Add contact</button>
+        <Button type="submit" className={css['btn-form']} variant="contained" size='medium'>Add contact</Button>
         <br />
       </form>
     </div>

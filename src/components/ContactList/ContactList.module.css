@@ -3,22 +3,16 @@
     width: 600px;
 }
 
-
 .btn-delete {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     border: transparent;
-    border-radius: 5px;
-    box-shadow: 6px 6px 4px 2px rgba(0, 0, 0, 0.3);
-    background-color: orange;
-    color: black;   
-    margin-top: 12px;
+    border-radius: 5px;        
     margin-left: 10px;
     height: 25px;
 }
 
 .btn-delete:active {
-    background-color: red;
     transform: scale(1.05);
 }

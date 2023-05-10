@@ -3,6 +3,9 @@ import { deleteContact } from '../../redux/contacts/operations';
 import css from './ContactList.module.css';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { selectFilter } from '../../redux/filter/selectors';
+// import Button from '@mui/material/Button';
+import { IconButton, List, ListItem } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const ContactList = ({ children }) => {
@@ -22,16 +25,19 @@ const ContactList = ({ children }) => {
       <div >
         <h2 className={css.title}>Contacts</h2>
         {children}
-        <ul className={css.list}>
+        <List className={css.list} >
           {contactsList.map(({ name, number, id }) => (
-            <li key={id} className={css.item}>
-              <p>{name}: {number} </p>
-              <button type="button" onClick={() => dispatch(deleteContact(id))} className={css['btn-delete']}>
+            <ListItem key={id} className={css.item}>
+              <p>{name}: {number}</p>
+              {/* <Button type="button" onClick={() => dispatch(deleteContact(id))} className={css['btn-delete']} variant="contained" size='small'>
                 Delete
-              </button>
-            </li>
+              </Button> */}
+              <IconButton aria-label="delete" color="primary" size="large" onClick={() => dispatch(deleteContact(id))}>
+                   <DeleteIcon />
+              </IconButton>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </div>
     </>
   );
