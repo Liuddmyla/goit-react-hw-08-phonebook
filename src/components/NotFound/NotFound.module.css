@@ -1,0 +1,11 @@
+.text {
+    height: 70px;
+    font-weight: 600;
+    font-size: 150px;
+    color: orange;
+}
+
+.box {
+    max-width: 800px;
+    margin: auto;
+}
